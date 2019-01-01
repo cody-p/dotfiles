@@ -53,4 +53,4 @@ wintypes :
     focus = true;
   };
 };
-blur-background = true;
+#blur-background = true;
