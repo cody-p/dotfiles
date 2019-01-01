@@ -22,7 +22,7 @@
        defaultLocale = "en_US.UTF-8";
     };
 
-    time.timeZone = "America/LosAngeles";
+    time.timeZone = "America/Los_Angeles";
     nixpkgs.config.allowUnfree = true;
 
     programs = {
