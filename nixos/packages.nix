@@ -34,5 +34,6 @@
         discord
         steam
         cargo
+	lolcat
     ];
 }

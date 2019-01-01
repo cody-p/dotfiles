@@ -3,7 +3,7 @@
 {
     environment = {
         interactiveShellInit = ''
-            neofetch
+            neofetch | lolcat
         '';
         variables = {
             EDITOR="gedit";
