@@ -27,6 +27,7 @@
 
     programs = {
         dconf.enable = true;
+        ssh.askPassword = "";
     };
 
     sound.enable = true;
