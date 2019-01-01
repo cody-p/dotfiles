@@ -52,7 +52,7 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-bindsym --release Print exec spectacle -r
+bindsym --release Print exec gnome-screenshot -ca
 bindsym $mod+f4 kill
 
 #audio
@@ -98,9 +98,6 @@ bindsym $mod+r mode "resize"
 focus_follows_mouse no
 mouse_warping none
 
-#gaps inner 30
-#gaps outer -30
-
 #set $active #00000000
 set $active #888a85 
 #set $active #1dcf00
@@ -121,25 +118,12 @@ client.urgent           $active  $active  #ffffff     $active    $active
 client.placeholder      $invis  $invis  #ffffff     $invis    $invis
 
 client.background       $inact
- 
-exec xsetroot -solid '#000000'
-
-exec --no-startup-id sshfs cloud:/home/cloud/storage /home/cody/personal/cloud >> /home/cody/personal/log/sshfs.log
-
-#uncomment this to have slideshow wallpaper
-#exec --no-startup-id ~/screen-desk.sh
-#uncomment this to set static wallpaper
-exec --no-startup-id nitrogen --restore &
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 exec --no-startup-id pasystray &
 exec --no-startup-id tint2 &
-exec --no-startup-id compton -b --config ~/.config/compton/compton.conf &
 exec --no-startup-id thunderbird &
 exec --no-startup-id pamac-tray &
-
-smart_gaps true
-smart_borders true
 
 for_window [class="Nitrogen"] floating enable;
 for_window [class="Galculator"] floating enable;
