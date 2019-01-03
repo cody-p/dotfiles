@@ -31,5 +31,6 @@
         cowsay
         fortune
         gksu
+        arandr
     ];
 }

@@ -164,8 +164,6 @@ launcher_icon_theme_override = 0
 startup_notifications = 1
 launcher_tooltip = 1
 launcher_item_app = /run/current-system/sw/share/applications/xfce4-session-logout.desktop
-launcher_item_app = /run/current-system/sw/share/applications/xfce-settings-manager.desktop
-launcher_item_app = /run/current-system/sw/share/applications/exo-file-manager.desktop
 
 #-------------------------------------
 # Clock
