@@ -2,12 +2,6 @@
 
 {
     environment.systemPackages = with pkgs; [
-        gnome3.gedit 
-        gnome3.gnome-system-monitor
-        gnome3.file-roller
-        gnome3.nautilus 
-        gnome3.gnome-keyring 
-        gnome3.gnome-screenshot
         firefox
         thunderbird
         pasystray
@@ -20,20 +14,27 @@
         nano
         sudo
         pciutils
-        gksu
-        polkit_gnome
-        lxappearance-gtk3 
         neofetch
         killall
         arandr
         keepassx2
         rsync
-        xfce.thunar
         glxinfo 
         nitrogen
         discord
         steam
         cargo
-	lolcat
+        krita
+        gparted
+        equilux-theme        
+        #joke shit
+        lolcat
+        cowsay
+        fortune
+
+        # some things i use when i don't have a DE enabled
+        #polkit_gnome
+        #lxappearance-gtk3 
+        gksu
     ];
 }
