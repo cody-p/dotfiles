@@ -16,7 +16,6 @@
         pciutils
         neofetch
         killall
-        arandr
         keepassx2
         rsync
         glxinfo 
@@ -24,17 +23,13 @@
         discord
         steam
         cargo
+        gcc
         krita
         gparted
-        equilux-theme        
-        #joke shit
+        equilux-theme
         lolcat
         cowsay
         fortune
-
-        # some things i use when i don't have a DE enabled
-        #polkit_gnome
-        #lxappearance-gtk3 
         gksu
     ];
 }

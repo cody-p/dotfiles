@@ -3,7 +3,7 @@
 {
     environment = {
         interactiveShellInit = ''
-            fortune | cowsay | lolcat
+            neofetch | lolcat
         '';
         variables = {
             EDITOR="gedit";

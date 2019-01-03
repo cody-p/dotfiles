@@ -1,5 +1,5 @@
 set $mod Mod1
-font pango:URW Gothic 12
+font pango:BPMono 12
 #font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 bindsym $mod+Return exec tilix
@@ -60,8 +60,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1000
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-#bindsym --whole-window button3 exec --no-startup-id ~/useful-scripts/rightclick.sh
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -95,27 +93,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-focus_follows_mouse no
+focus_follows_mouse yes
 mouse_warping none
 
-#set $active #00000000
-set $active #888a85 
-#set $active #1dcf00
-#set $active #f6ad1b 
+set $active #000000
+set $inact #323232
+set $b_width 1
+set $text_col #bbbabb
 
-set $inact #2c1700 
-#set $inact #2e3436 #gray colors
-#set $inact #00000000
-set $b_width 2
+for_window[class="^.*"] border normal $b_width
 
-for_window[class="^.*"] border pixel $b_width
-
-#class                  border  backgr. text     indicator child_border
-client.focused          $active $active #ffffff     $active   $active
-client.focused_inactive $inact  $inact  #ffffff     $inact    $inact
-client.unfocused        $inact  $inact  #ffffff     $inact    $inact
-client.urgent           $active  $active  #ffffff     $active    $active
-client.placeholder      $invis  $invis  #ffffff     $invis    $invis
+#class                  [border]    [background]    [text]      [indicator] [child_border]
+client.focused          $active     $active         $text_col   $active     $active
+client.focused_inactive $inact      $inact          $text_col   $inact      $inact
+client.unfocused        $inact      $inact          $text_col   $inact      $inact
+client.urgent           $active     $active         $text_col   $active     $active
+client.placeholder      $invis      $invis          $text_col   $invis      $invis
 
 client.background       $inact
 

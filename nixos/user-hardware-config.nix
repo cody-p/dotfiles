@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+    fileSystems."/storage" =
+    { device = "/dev/disk/by-label/storage";
+        fsType = "ext4";
+    };
+
     hardware = {
         cpu.intel.updateMicrocode = true;
         nvidia = {
