@@ -31,5 +31,11 @@
     };
 
     sound.enable = true;
-    system.stateVersion = "18.09";
+    system = {
+        autoUpgrade = {
+            enable = true;
+            channel = https://nixos.org/channels/nixos-unstable;
+        };
+        stateVersion = "18.09";
+    };
 }

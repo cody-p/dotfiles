@@ -32,5 +32,8 @@
         fortune
         gksu
         arandr
+        xfce.xfce4-taskmanager
+        htop
+        kitty
     ];
 }

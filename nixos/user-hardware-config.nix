@@ -5,6 +5,13 @@
     { device = "/dev/disk/by-label/storage";
         fsType = "ext4";
     };
+    
+    fileSystems."/backup" = {
+        device = "/dev/disk/by-label/backup";
+        options = [
+            "nofail"
+        ];
+    };
 
     hardware = {
         cpu.intel.updateMicrocode = true;
