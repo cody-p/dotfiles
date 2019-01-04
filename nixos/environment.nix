@@ -6,8 +6,8 @@
             neofetch | lolcat
         '';
         variables = {
-            EDITOR="gedit";
-            TERMINAL="tilix";
+            EDITOR="mousepad";
+            TERMINAL="kitty";
         };
     };
 }

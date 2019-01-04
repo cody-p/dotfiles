@@ -8,7 +8,6 @@
         pavucontrol
         wget
         git
-        tilix
         tint2 
         compton
         nano
