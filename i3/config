@@ -1,4 +1,5 @@
 set $mod Mod1
+set $super Super_L
 font pango:BPMono 12
 #font pango:DejaVu Sans Mono 8
 floating_modifier $mod
@@ -59,6 +60,7 @@ bindsym $mod+f4 kill
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1000
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1000
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym $super exec --no-startup-id xfce4-appfinder
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -122,3 +124,4 @@ for_window [window_type="popup_menu"] floating enable;
 for_window [window_type="dropdown_menu"] floating enable;
 for_window [window_type="splash"] floating enable;
 for_window [window_type="dialog"] floating enable;
+for_window [title="Application Finder"] floating enable;
