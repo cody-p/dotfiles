@@ -5,7 +5,7 @@ font pango:BPMono 12
 floating_modifier $mod
 bindsym $mod+Return exec tilix
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -sf "#bebebe" -sb "#5a5a5a"
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+j focus left
 bindsym $mod+k focus down
