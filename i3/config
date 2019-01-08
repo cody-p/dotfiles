@@ -103,7 +103,7 @@ set $inact #323232
 set $b_width 1
 set $text_col #bbbabb
 
-for_window[class="^.*"] border normal $b_width
+for_window[class="^.*"] border pixel $b_width
 
 #class                  [border]    [background]    [text]      [indicator] [child_border]
 client.focused          $active     $active         $text_col   $active     $active

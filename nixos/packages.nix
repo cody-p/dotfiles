@@ -21,7 +21,7 @@
         nitrogen
         discord
         steam
-        cargo
+        rustup
         gcc
         krita
         gparted
@@ -34,5 +34,8 @@
         xfce.xfce4-taskmanager
         htop
         tilix
+        python
+        gnome3.gedit
+        libreoffice
     ];
 }

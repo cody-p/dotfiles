@@ -43,5 +43,15 @@
                 '';
             };
         };
+        
+        openssh = {
+            enable = true;
+            allowSFTP = true;
+            passwordAuthentication = false;
+            permitRootLogin = "no";
+            ports = [
+                4292
+            ];
+        };
     };
 }
