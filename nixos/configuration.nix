@@ -23,11 +23,16 @@
        defaultLocale = "en_US.UTF-8";
     };
 
+    networking = {
+        nameservers = [
+            "8.8.8.8"
+        ];
+    };
     time.timeZone = "America/Los_Angeles";
     nixpkgs.config.allowUnfree = true;
 
     environment = {
-            systemPackages = with pkgs; [
+        systemPackages = with pkgs; [
             firefox
             thunderbird
             pasystray

@@ -2,10 +2,7 @@
 
 {
     networking = {
-        hostName = "Yuuko"; # Define your hostname.
-        nameservers = [
-            "8.8.8.8"
-        ];
+        hostName = "Yuuko";
     };
     
     boot = {
@@ -47,11 +44,6 @@
     hardware = {
         cpu.intel.updateMicrocode = true;
         nvidia = {
-            optimus_prime = {
-                enable = true;
-                nvidiaBusId = "PCI:02:00:0";
-                intelBusId = "PCI:00:02:0";
-            };
             modesetting.enable = true;
         };
         opengl = {
