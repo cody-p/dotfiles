@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -23,11 +19,7 @@
        defaultLocale = "en_US.UTF-8";
     };
 
-    networking = {
-        nameservers = [
-            "8.8.8.8"
-        ];
-    };
+    networking.nameservers = [ "8.8.8.8" ];
     time.timeZone = "America/Los_Angeles";
     nixpkgs.config.allowUnfree = true;
 
@@ -86,7 +78,7 @@
             enable = true;
             channel = https://nixos.org/channels/nixos-unstable;
         };
-        stateVersion = "18.09";
+        #stateVersion = "18.09";
     };
     
     services = {
@@ -101,38 +93,21 @@
                 xterm.enable = false;
                 xfce = {
                     enable = true;
-                    enableXfwm = false;
-                    noDesktop = true;
                 };
-            };
-            windowManager.i3 = {
-                enable = true;
-                extraPackages = with pkgs; [
-                    dmenu
-                    i3lock
-                ];
             };
             libinput = {
                 accelSpeed = 0;
                 accelProfile = "flat";
             };
             displayManager = {
-                # calibrate monitors - currently disabled because i'm using xfce which should handle this for me
-                #sessionCommands = ''
-                #    xrandr --output HDMI-1-3 --off --output DVI-D-0 --off --output HDMI-1-2 --off --output HDMI-1-1 --off --output DP-1-2 --mode 1600x900 --pos 3840x72 --rotate normal --output DP-1-1 --off --output                     HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-5 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-4 --off --output DP-3 --off --output DP-2 --off --output DP-1 --off                 --output DP-0 --off
-                #'';
                 gdm = {
                     wayland = false;
                     enable = true;
                 };
-                setupCommands = ''
-                    xrandr --output DVI-D-0 --mode 1600x900 --pos 3840x88 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-5 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-4 --off --output DP-3 --off --output DP-2 --off --output DP-1 --off --output DP-0 --off
-                '';
             };
         };
         
         openssh = {
-            enable = true;
             allowSFTP = true;
             passwordAuthentication = false;
             permitRootLogin = "no";
@@ -149,8 +124,13 @@
         };
     };
     
-    users.users.cody = {
-        isNormalUser = true;
-        extraGroups = [ "wheel" ];
+    users.users = {
+        cody = {
+            isNormalUser = true;
+            extraGroups = [ "wheel" ];
+        };
+        guest = {
+            isNormalUser = true;
+        };
     };
 }

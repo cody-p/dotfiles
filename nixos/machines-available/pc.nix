@@ -1,8 +1,24 @@
 { config, pkgs, ... }:
 
 {
-    networking = {
-        hostName = "Yuuko";
+    networking.hostName = "Yuuko";
+    
+    services = {
+        #openssh.enable = true;
+        xserver = {
+            desktopManager.xfce = {
+                noDesktop = true;
+                enableXfwm = false;
+            };
+            videoDrivers = [ "nvidia" ];
+            windowManager.i3 = {
+                enable = true;
+                extraPackages = with pkgs; [
+                    dmenu
+                    i3lock
+                ];
+            };
+        };
     };
     
     boot = {
@@ -23,12 +39,6 @@
         gcc
     ];
     
-    services = {
-        xserver = {
-            videoDrivers = [ "nvidia" ];
-         };
-    };
-    
     fileSystems."/storage" =
     { device = "/dev/disk/by-label/storage";
         fsType = "ext4";
@@ -40,12 +50,10 @@
             "nofail"
         ];
     };
-
+    
     hardware = {
         cpu.intel.updateMicrocode = true;
-        nvidia = {
-            modesetting.enable = true;
-        };
+        nvidia.modesetting.enable = true;
         opengl = {
             driSupport32Bit = true;
             extraPackages = [ pkgs.linuxPackages.nvidia_x11.out ];
