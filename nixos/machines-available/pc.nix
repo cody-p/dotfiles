@@ -1,6 +1,37 @@
 { config, pkgs, ... }:
 
 {
+    networking = {
+        hostName = "Yuuko"; # Define your hostname.
+        nameservers = [
+            "8.8.8.8"
+        ];
+    };
+    
+    boot = {
+        #extraModprobeConfig = "options nvidia-drm modeset=1";
+        initrd.kernelModules = [
+            "nvidia"
+            "nvidia_modeset"
+            "nvidia_uvm"
+            "nvidia_drm"
+        ];
+    };
+    
+    environment.systemPackages = with pkgs; [
+        krita
+        discord
+        steam
+        rustup
+        gcc
+    ];
+    
+    services = {
+        xserver = {
+            videoDrivers = [ "nvidia" ];
+         };
+    };
+    
     fileSystems."/storage" =
     { device = "/dev/disk/by-label/storage";
         fsType = "ext4";
@@ -22,10 +53,6 @@
                 intelBusId = "PCI:00:02:0";
             };
             modesetting.enable = true;
-        };
-        pulseaudio = {
-            enable = true;
-            support32Bit = true;
         };
         opengl = {
             driSupport32Bit = true;
