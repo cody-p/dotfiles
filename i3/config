@@ -115,6 +115,7 @@ client.placeholder      $invis      $invis          $text_col   $invis      $inv
 client.background       $inact
 
 exec --no-startup-id tint2 &
+exec --no-startup-id nitrogen --restore &
 
 for_window [class="Nitrogen"] floating enable;
 for_window [class="Galculator"] floating enable;
