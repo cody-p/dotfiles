@@ -98,9 +98,9 @@ bindsym $mod+r mode "resize"
 focus_follows_mouse no
 mouse_warping none
 
-set $active #000000
-set $inact #323232
-set $b_width 1
+set $active #bbbabb
+set $inact #000000
+set $b_width 2
 set $text_col #bbbabb
 
 for_window[class="^.*"] border pixel $b_width
@@ -115,6 +115,7 @@ client.placeholder      $invis      $invis          $text_col   $invis      $inv
 client.background       $inact
 
 exec --no-startup-id tint2 &
+exec --no-startup-id pa-applet &
 exec --no-startup-id nitrogen --restore &
 
 for_window [class="Nitrogen"] floating enable;
