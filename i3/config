@@ -1,3 +1,15 @@
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+for_window [class="plasmashell"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [title="win7"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px, no_focus
+
 set $mod Mod1
 set $super Super_L
 font pango:BPMono 12
@@ -103,7 +115,7 @@ mouse_warping none
 
 set $active #bbbabb
 set $inact #000000
-set $b_width 2
+set $b_width 0
 set $text_col #bbbabb
 
 for_window[class="^.*"] border pixel $b_width
@@ -117,10 +129,10 @@ client.placeholder      $invis      $invis          $text_col   $invis      $inv
 
 client.background       $inact
 
-exec --no-startup-id tint2 &
-exec --no-startup-id pa-applet &
+#exec --no-startup-id tint2 &
+#exec --no-startup-id pa-applet &
 #exec --no-startup-id compton --config ~/.config/compton/config
-exec --no-startup-id screenfix &
+#exec --no-startup-id screenfix &
 
 for_window [class="Nitrogen"] floating enable;
 for_window [class="Galculator"] floating enable;
