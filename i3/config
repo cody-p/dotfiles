@@ -134,6 +134,7 @@ client.background       $inact
 #exec --no-startup-id compton --config ~/.config/compton/config
 #exec --no-startup-id screenfix &
 exec --no-startup-id nitrogen restore &
+exec --no-startup-id compton --config ~/.config/compton/config
 
 for_window [class="Nitrogen"] floating enable;
 for_window [class="Galculator"] floating enable;
