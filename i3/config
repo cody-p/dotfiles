@@ -65,7 +65,7 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-bindsym --release Print exec gnome-screenshot -ia
+#bindsym --release Print exec gnome-screenshot -ia
 bindsym $mod+f4 kill
 
 #audio
@@ -75,7 +75,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 
 bindsym XF86RotateWindows exec --no-startup-id screen-rotate
 
-bindsym $super exec --no-startup-id xfce4-appfinder
+#bindsym $super exec --no-startup-id xfce4-appfinder
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -133,6 +133,7 @@ client.background       $inact
 #exec --no-startup-id pa-applet &
 #exec --no-startup-id compton --config ~/.config/compton/config
 #exec --no-startup-id screenfix &
+exec --no-startup-id nitrogen restore &
 
 for_window [class="Nitrogen"] floating enable;
 for_window [class="Galculator"] floating enable;
