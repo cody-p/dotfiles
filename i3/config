@@ -129,8 +129,8 @@ client.placeholder      $invis      $invis          $text_col   $invis      $inv
 
 client.background       $inact
 
-gaps inner 20
-gaps outer 10
+gaps inner 10
+gaps outer 20
 
 #exec --no-startup-id tint2 &
 #exec --no-startup-id pa-applet &
