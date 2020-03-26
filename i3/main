@@ -131,8 +131,8 @@ client.placeholder      $invis      $invis          $text_col   $invis      $inv
 
 client.background       $inact
 
-gaps inner 20
-gaps outer -15
+gaps inner 50
+gaps outer -30
 
 #exec --no-startup-id pa-applet &
 #exec --no-startup-id screenfix &
