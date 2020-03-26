@@ -68,7 +68,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 #bindsym --release Print exec gnome-screenshot -ia
 bindsym $mod+f4 kill
-bindcode --release 133d exec --no-startup-id xfce4-popup-whiskermenu
+bindcode --release 133 exec --no-startup-id xfce4-popup-whiskermenu
 
 #audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1000
