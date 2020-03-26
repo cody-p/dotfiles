@@ -17,7 +17,7 @@ font pango:BPMono 12
 floating_modifier $mod
 bindsym $mod+Return exec tilix
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run -sf "#bebebe" -sb "#5a5a5a"
+bindsym $mod+d exec dmenu_run -sf "#bebebe" -sb "#5a5a5a" -fn 'Sans Regular-24'
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -130,13 +130,12 @@ client.placeholder      $invis      $invis          $text_col   $invis      $inv
 client.background       $inact
 
 gaps inner 20
-gaps outer 10
+gaps outer -15
 
-#exec --no-startup-id tint2 &
 #exec --no-startup-id pa-applet &
-exec --no-startup-id screenfix &
-exec --no-startup-id nitrogen restore
-exec --no-startup-id compton --config ~/.config/compton/config
+#exec --no-startup-id screenfix &
+#exec --no-startup-id nitrogen restore
+exec --no-startup-id compton -b --config ~/dotfiles/compton/main
 
 for_window [class="Nitrogen"] floating enable;
 for_window [class="Galculator"] floating enable;
