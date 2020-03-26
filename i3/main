@@ -12,6 +12,7 @@ for_window [class="plasmashell" window_type="notification"] floating enable, bor
 
 set $mod Mod1
 set $super Super_L
+set $win Mod4
 font pango:BPMono 12
 #font pango:DejaVu Sans Mono 8
 floating_modifier $mod
@@ -67,6 +68,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 #bindsym --release Print exec gnome-screenshot -ia
 bindsym $mod+f4 kill
+bindcode --release 133d exec --no-startup-id xfce4-popup-whiskermenu
 
 #audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1000
@@ -136,6 +138,7 @@ gaps outer -15
 #exec --no-startup-id screenfix &
 #exec --no-startup-id nitrogen restore
 exec --no-startup-id compton -b --config ~/dotfiles/compton/main
+exec --no-startup-id bgslide
 
 for_window [class="Nitrogen"] floating enable;
 for_window [class="Galculator"] floating enable;
